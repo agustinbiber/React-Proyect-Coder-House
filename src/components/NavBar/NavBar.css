@@ -1,0 +1,20 @@
+.nav-bar {
+  align-items: center;
+  background-color: rgb(52, 73, 94);
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  justify-content: space-between;
+  padding: 0 3em 0 3em;
+}
+
+.page-logo {
+  height: 70%;
+}
+
+.nav-category-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
