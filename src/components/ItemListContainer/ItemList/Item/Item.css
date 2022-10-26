@@ -1,0 +1,48 @@
+.item {
+    border: 1px solid rgb(52, 73, 94);;
+    border-radius: 5px;
+    height: 400px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(52, 73, 94);;
+}
+
+.center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-header {
+    height: 15%;
+    font-size: 0.5em;
+}
+
+.item-body {
+    height: 70%;
+}
+
+.item-footer {
+    height: 15%;
+    font-weight: bold;
+    color: rgb(241,196,15);
+}
+
+.img-container {
+    height: 90%;
+    text-align: center;
+}
+
+img {
+    height: 100%;
+    border-radius: 4px;
+}
+
+button {
+    background-color: transparent;
+    border: 0.5px solid rgb(52, 73, 94);
+    border-radius: 5px;
+    color: rgb(52, 73, 94);
+    font-weight: bold;
+}

@@ -13,9 +13,9 @@ const NavBar = () => {
         alt="Amazoff page logo"
       />
       <nav className="nav-category-btn">
-        <CategoryButton category="Oficina" />
-        <CategoryButton category="Electrónica" />
         <CategoryButton category="Fotografía" />
+        <CategoryButton category="Audio" />
+        <CategoryButton category="Accesorios" />
       </nav>
       <CartWidget />
     </header>
