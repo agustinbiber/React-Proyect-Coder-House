@@ -1,10 +1,11 @@
 import "./CategoryButton.css";
+import { Link } from "react-router-dom";
 
 const CategoryButton = (props) => {
   return (
-    <a className="category-link" href="">
+    <Link className="category-link" to={props.destinationRoute}>
       {props.category}
-    </a>
+    </Link>
   );
 };
 

@@ -1,0 +1,6 @@
+.item-detail-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 15% 2% 15%;
+}

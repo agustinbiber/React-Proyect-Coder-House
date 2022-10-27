@@ -145,7 +145,7 @@ const itemsApi = [
     },
     {
         id: 301,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Sigma",
         model: "Adaptador M42",
@@ -156,7 +156,7 @@ const itemsApi = [
     },
     {
         id: 302,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Nikon",
         model: "Cargador de bateria",
@@ -167,7 +167,7 @@ const itemsApi = [
     },
     {
         id: 303,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Tiffen",
         model: "52mm CPL",
@@ -178,7 +178,7 @@ const itemsApi = [
     },
     {
         id: 304,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Godox",
         model: "X1-NR",
@@ -189,7 +189,7 @@ const itemsApi = [
     },
     {
         id: 305,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Godox",
         model: "TCM",
@@ -200,7 +200,7 @@ const itemsApi = [
     },
     {
         id: 306,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Godox",
         model: "Flash 60",
@@ -211,7 +211,7 @@ const itemsApi = [
     },
     {
         id: 307,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Marumi",
         model: "CPL de 67mm",
@@ -222,7 +222,7 @@ const itemsApi = [
     },
     {
         id: 308,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "K&F",
         model: "StandTable",
@@ -233,7 +233,7 @@ const itemsApi = [
     },
     {
         id: 309,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Motorola",
         model: "microSDA",
@@ -244,7 +244,7 @@ const itemsApi = [
     },
     {
         id: 310,
-        category: "photography",
+        category: "accesories",
         subcategory: "accesories",
         brand: "WD",
         model: "My Passport",
@@ -332,7 +332,7 @@ const itemsApi = [
     },
     {
         id: 701,
-        category: "audio",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Shure",
         model: "Flex Stand",
@@ -343,7 +343,7 @@ const itemsApi = [
     },
     {
         id: 702,
-        category: "audio",
+        category: "accesories",
         subcategory: "accesories",
         brand: "Amazon",
         model: "HDMI 2.0",
@@ -353,5 +353,9 @@ const itemsApi = [
         img: ["/img/audio/accesories/3. Cable HDMI.JPG", "/img/audio/accesories/4. Cable HDMI.JPG"]
     },
 ]
+
+//export const getItemById = (id) => {
+//    return itemsApi[id]
+//}
 
 export default itemsApi;

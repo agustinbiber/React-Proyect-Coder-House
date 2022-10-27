@@ -1,0 +1,12 @@
+.item-count {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+.item-button {
+    height: 50%;
+}
