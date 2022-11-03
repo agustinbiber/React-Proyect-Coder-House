@@ -3,6 +3,7 @@ import NavBar from "../../components/UI/NavBar";
 import ItemDetail from "../../components/Home/ItemDetailContainer/ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import itemsApi from "../../APIrest/itemsApi";
+import React from "react";
 
 //import { getItemById } from "../../APIrest/itemsApi";
 //import { useEffect, useState } from "react";

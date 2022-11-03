@@ -1,5 +1,6 @@
 import "./ItemDetail.css";
 import ItemCount from "./Item/ItemCount/ItemCount";
+import React from "react";
 
 const ItemDetail = (item) => {
 

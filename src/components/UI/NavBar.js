@@ -3,6 +3,7 @@ import CategoryButton from "../NavBar/CategoryButton/CategoryButton";
 import CartWidget from "../NavBar/CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import React from "react";
 
 const NavBar = () => {
   return (

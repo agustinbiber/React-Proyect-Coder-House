@@ -2,6 +2,7 @@ import "./ItemList.css";
 import Item from "./Item/Item";
 import itemsApi from "../../../../APIrest/itemsApi";
 import { useEffect, useState } from "react";
+import React from "react";
 
 const ItemList = (props) => {
   const [items, setItems] = useState([]);

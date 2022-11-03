@@ -1,5 +1,6 @@
 import "./CategoryButton.css";
 import { Link } from "react-router-dom";
+import React from "react";
 
 const CategoryButton = (props) => {
   return (
