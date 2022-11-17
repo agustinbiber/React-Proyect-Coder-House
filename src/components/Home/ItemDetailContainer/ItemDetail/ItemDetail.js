@@ -7,7 +7,7 @@ const ItemDetail = (item) => {
     return (
         <div className="item-detail">
           <div className="item-detail-header center-flex">
-            <h1>{item.name + " " + item.model}</h1>
+            <h1>{item.name}</h1>
           </div>
           <div className="item-detail-body">
             <h3>Descripción</h3>

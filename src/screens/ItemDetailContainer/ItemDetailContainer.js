@@ -2,8 +2,8 @@ import "./ItemDetailContainer.css";
 import NavBar from "../../components/UI/NavBar";
 import ItemDetail from "../../components/Home/ItemDetailContainer/ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import itemsApi from "../../APIrest/itemsApi";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 //import { getItemById } from "../../APIrest/itemsApi";
 //import { useEffect, useState } from "react";
@@ -16,6 +16,48 @@ const ItemDetailContainer = () => {
 //  useEffect( () => {
 //    setItem(getItemById(itemId))
 //  }, []);
+
+  const [itemDetail, setItemDetail ] = useState({});
+
+  useEffect(() => {
+    const dataBase = getFirestore();
+
+    const id = parseInt(itemId);
+    const reference = query(collection(dataBase, "ItemList"), where("id", "==", id) );
+
+    getDocs(reference).then(
+      (snpashot) => {
+        snpashot.docs.map((doc) => {
+            setItemDetail(doc.data());
+            return null;  // Para evitar error en consola
+          }
+        )
+      }
+    )
+  }, []);
+  
+  return (
+    <div>
+      <NavBar />
+      <div className="item-detail-container ">
+            <ItemDetail
+              id={itemDetail.id}
+              name={itemDetail.name}
+              stock={itemDetail.stock}
+              img={itemDetail.img}
+              price={itemDetail.price}
+              description={itemDetail.description}
+            />
+      </div>
+    </div>
+  );
+
+};
+
+export default ItemDetailContainer;
+
+
+/*
 
   return (
     <div>
@@ -37,6 +79,5 @@ const ItemDetailContainer = () => {
       </div>
     </div>
   );
-};
 
-export default ItemDetailContainer;
+  */
