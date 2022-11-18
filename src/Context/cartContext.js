@@ -1,40 +1,41 @@
 import { createContext, useState } from "react";
+import React from "react";
 
-const cartContext = React.createContext([]);
+export const CartContext = createContext({
+  cart: [],
+  addToCart: () => {},
+  isInCart: () => {},
+});
 
-// Tengo que importarlo como provider la App o la home
+export default function CartProvider({ children }) {
+  const [cart, setCart] = useState([{id: 0, name: "nada", price: 12}]);
 
-export default function CartProvider({ defaultaValue = [], children }) {
-  const [cart, setCart] = useState(defaultaValue);
+  const getFromCart = (id) => {
+    // Revisa si esta en cart y devuelve booleano
+    return cart.find((order) => order.id === id);
+  };
 
-  function getFromCart(id) {
-    return cart.find(obj => obj.id === id);
+  const isInCart = (id) => {
+    // Retorna booleano si esta en cart, revisa si es undef previamente
+    return id !== undefined ? getFromCart(id) : undefined;
+  };
+
+  const addToCart = (obj) => {
+    /*if (isInCart(obj && obj.id)) {
+      console.log("Elemento ya se encuentra en el carro");
+      return;
+    }*/
+    alert(cart[0]);
+    const updatedCart = cart;
+    updatedCart.push(obj);
+    setCart(updatedCart); // Escribo variable del useState
+    alert("paso");
+    return;
   }
-
-  function isInCart(id) {
-    return id === undefinded ? undefinded : getFrom !== undefined;
-  }
-
-  function addToCart(obj) {
-    if ( isInCart (obj && obj.id )) {
-        console.log("Wont add to cart");
-        return;
-    }
-    setCart([...cart, obj]);
-  }
-
-/*
-    addItem(item, quantity)
-    removeItem(itemId)
-    clear()
-    isInCart(id) // true false
-*/
-
+  
   return (
-    <cartContext.Provider
-      value={{ cart, addToCart, isInCart, cartSize: cart.length }}
-    >
+    <CartContext.Provider value={{ cart, addToCart, isInCart }}>
       {children}
-    </cartContext.Provider>
+    </CartContext.Provider>
   );
-}
+};

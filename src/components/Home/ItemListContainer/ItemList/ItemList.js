@@ -53,6 +53,7 @@ const ItemList = (props) => {
         snapshot.docs.map(
           (doc) => {
               const itemsElement = doc.data();
+              itemsElement.id = doc.id;
               itemsArray.push(itemsElement);
               setItems(itemsArray); // Ver de aprolijar
               return null;  // Para evitar error en consola

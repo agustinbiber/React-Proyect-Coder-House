@@ -15,7 +15,7 @@ const ItemDetail = (item) => {
             <h3>Precio: {item.price} USD</h3>
           </div>
           <div className="item-detail-footer center-flex">
-            <ItemCount stock={item.stock} />
+              <ItemCount id={item.id} name={item.name} price={item.price}  />
           </div>
         </div>
       );

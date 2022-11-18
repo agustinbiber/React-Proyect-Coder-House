@@ -1,0 +1,12 @@
+.cart-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 2% 0 2% 0;
+}
+
+.cart-list > * {
+    margin: 1em 0;
+}
