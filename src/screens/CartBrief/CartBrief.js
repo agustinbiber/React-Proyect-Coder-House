@@ -14,19 +14,24 @@ import {
 import { Link } from "react-router-dom";
 
 export default function CartBrief() {
+  
   const { cart, clearCart } = useContext(CartContext);
   const [costumerName, setCostumerName] = useState("");
   const [costumerPhone, setCostumerPhone] = useState("");
   const [costumerEmail, setCostumerEmail] = useState("");
 
+  const handlePhoneInput = (event) => {
+    /[0-9]$/.test(event.target.value) && setCostumerPhone(event.target.value)
+  }
+
   const sendOrder = () => {
-  
+
     const orderToSend = {
       name: costumerName,
       phone: costumerPhone,
       email: costumerEmail,
       items: cart,
-      total: 100
+      total: 0
     }
 
     if (costumerName !== "" && costumerPhone !== "" && costumerEmail !== "") {
@@ -41,7 +46,7 @@ export default function CartBrief() {
         getDoc(itemRef).then( (snapshot) => {
           if (snapshot.exists()) {
             const itemFromDataBase = snapshot.data();
-            console.log({snapshot, itemFromDataBase});
+            orderToSend.total = orderToSend.total + cartElement.price*cartElement.quantity;
             if ( ( itemFromDataBase.stock >= cartElement.quantity) ) {
               const newStock = itemFromDataBase.stock - cartElement.quantity;
               updateDoc(itemRef, {stock: newStock});
@@ -79,19 +84,21 @@ export default function CartBrief() {
               <input id="customerName" name="costumerName" type="text" value={costumerName} onChange={ (event) => setCostumerName(event.target.value)}></input>
 
               <label for="costumerPhone">Telefono: </label>
-              <input id="costumerPhone" name="costumerPhone" type="text" value={costumerPhone} onChange={ (event) => setCostumerPhone(event.target.value)}></input>
+              <input id="costumerPhone" name="costumerPhone" type="text" value={costumerPhone} onChange={ (event) => handlePhoneInput(event)}></input>
 
               <label for="customerEmail">E-mail: </label>
               <input id="costumerEmail" name="costumerEmail" type="email" value={costumerEmail} onChange={ (event) => setCostumerEmail(event.target.value)}></input>
+              
               <div className="order-buttons">
-                <button className="cart-brief-button1" onClick={sendOrder}>Finalizar Compra</button>
-                <button className="cart-brief-button1" onClick={clearCart}>Vaciar carrito</button>
+                <button className="cart-brief-button1" type="button" onClick={sendOrder}>Finalizar Compra</button>
+                <button className="cart-brief-button1" tyoe="button" onClick={clearCart}>Vaciar carrito</button>
               </div>
+
             </form>
           </div>
         ) : (
           <Link to={"/"}>
-            <button className="cart-brief-button2">Regresar</button>
+            <button className="cart-brief-button2" type="button">Regresar</button>
           </Link>
         )}
       </div>
