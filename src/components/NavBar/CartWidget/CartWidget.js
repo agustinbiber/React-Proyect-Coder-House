@@ -1,3 +1,10 @@
+/* 
+ COMPONENTE CartWidget
+    Es el widget con el simbolo del carrito.
+    Se inicializa en cero porque no tenemos elementos en el carro.
+    A medida que agregamos el numero nos muestra la cantidad de elementos distintos que tenemos.
+*/
+
 import "./CartWidget.css";
 import cartLogo from "./media/cartLogo.svg";
 import React, { useContext } from "react";
@@ -7,12 +14,12 @@ import { CartContext } from "../../../context/CartContext";
 const CartWidget = () => {
   const { cartQuantity } = useContext(CartContext);
   // const cartQuantity2 = 2;
-  
+
   return (
-      <Link className="cart-div" to="/cart">
-        <img src={cartLogo} alt="Cart icon" />
-        <p className="cart-indicator">{cartQuantity}</p>
-      </Link>
+    <Link className="cart-div" to="/cart">
+      <img src={cartLogo} alt="Cart icon" />
+      <p className="cart-indicator">{cartQuantity}</p>
+    </Link>
   );
 };
 

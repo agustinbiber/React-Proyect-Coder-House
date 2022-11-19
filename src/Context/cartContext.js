@@ -1,12 +1,20 @@
+/* 
+ COMPONENTE CartContext
+    Context para trabajar con variables y funciones globales en varios componentes de la aplicacion.
+    Especialmente para el manejo del cart y el envio de ordenes de compra.
+*/
+
 import { createContext, useState } from "react";
 import React from "react";
+
+import toast, { Toaster } from "react-hot-toast";
 
 export const CartContext = createContext({
   cart: [],
   addToCart: () => {},
   isInCart: () => {},
   clearCart: () => {},
-  cartQuantity: 0
+  cartQuantity: 0,
 });
 
 export default function CartProvider({ children }) {
@@ -25,7 +33,7 @@ export default function CartProvider({ children }) {
 
   const addToCart = (obj) => {
     if (isInCart(obj && obj.id)) {
-      alert("Elemento ya se encuentra en el carro");
+      toast("Elemento ya se encuentra en el carro, busque otros articulos");
       return;
     }
     const updatedCart = cart;
@@ -33,17 +41,22 @@ export default function CartProvider({ children }) {
     setCart(updatedCart); // Escribo variable del useState
     const newCartQuantity = updatedCart.length;
     setCartQuantity(newCartQuantity);
+    toast("El articulo se agrego con exito al carrito !!");
     return;
-  }
+  };
 
   const clearCart = () => {
     setCart([]);
     setCartQuantity(0);
-  }
-  
+    toast("Usted vacio su carrito con exito.");
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, isInCart, clearCart, cartQuantity }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, isInCart, clearCart, cartQuantity }}
+    >
       {children}
+      <Toaster />
     </CartContext.Provider>
   );
 }

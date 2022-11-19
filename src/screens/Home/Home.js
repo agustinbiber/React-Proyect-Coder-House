@@ -1,3 +1,8 @@
+/* 
+ COMPONENTE Home
+    Componente padre de la aplicacion
+*/
+
 // Components
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 // Styles

@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Proyecto Final React
+## Agustín Biber - _Coder House_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto final del Curso React en academia Coder House, año 2022.
+Se trata de un e-commerce desarrollado como Web App.
+- Base de Datos en Firebase
+- Libreria Hot Toast para notificaciones
+- Se utiliza React Router para navegar por el sitio
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Permite filtrar articulos segun sus categorias
+- Cada articulo al seleccionarlo, nos muestra sus detalles y nos permite agregarlo a un carro de compras
+- Se verifica que el articulo no se encuentre en el carro y que haya stock suficiente
+- Podemos generar un orden de compra con todos los articulos ingresados
+- La aplicacion verifica antes de realizar la compra nuevamente el stock y actualiza el mismo en la base de datos
+- Solicita al usurio distinta informacion que se almacena junto a la orden de compra para finalizar la compra
+- Se utiliza React router para acceder a ditintos componentes de la aplicacion
+- Notificaciones interactivas van guiando al usuario a medida que interactua con la aplicacion
+- El formulario de datos del cliente verifica que haya informacion correcta ingresada previo a enviar la orden de compra
+- El cliente puede vaciar su carrito de compras
+- Una vez enviada una orden el carrito se vacia de manera automatica
 
-### `npm start`
+## Tecnologías
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Dillinger uses a number of open source projects to work properly:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [ReactJS] - HTML enhanced for web apps!
+- [node.js] - evented I/O for the backend
+- HTML
+- CSS
+- Hot Toast
+- React Router
 
-### `npm test`
+## Instalación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+WebApp se ejecuta desde un servidor accediendo al url.
 
-### `npm run build`
+## Manual de uso
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Elegir categoría de productos a los que desdea acceder
+- Se pueden ver todos los articulos seleccionando el logo de la pagina
+- Si el articulo interesa, seleccionar en detalles
+- Ingresar la cantidad de unidades que desea comprar
+- Seleccionar en agregar al carro para que se guarde la seleccion
+- Repetir para varios articulos
+- Una vez finalizada la seleccion, clickear en el logo del carro, el mismo nos muestra que cantidad de elementos agregamos
+- Revisar el detalle final de la compra
+- Ingresar correctamente datos de cliente
+- Seleccionar finalizar compra para que se envie al servidor los datos de usuario, lo articulos a comprar, y el total de la orden en USD
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Agustín Biber
+agustin.biber@hotmai.com
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+MIT
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Free Software, Hell Yeah!**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   [dill]: <https://github.com/joemccann/dillinger>
+   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
+   [john gruber]: <http://daringfireball.net>
+   [df1]: <http://daringfireball.net/projects/markdown/>
+   [markdown-it]: <https://github.com/markdown-it/markdown-it>
+   [Ace Editor]: <http://ace.ajax.org>
+   [node.js]: <http://nodejs.org>
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+   [jQuery]: <http://jquery.com>
+   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
+   [express]: <http://expressjs.com>
+   [AngularJS]: <http://angularjs.org>
+   [Gulp]: <http://gulpjs.com>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
+   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
+   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
+   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
+   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
+   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
