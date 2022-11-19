@@ -9,7 +9,7 @@ import Error404 from "../../components/Home/Error404";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import React from "react";
-import CartProvider from "../../context/CartContext";
+import CartProvider from "../../newContext/CartContext";
 import CartBrief from "../CartBrief/CartBrief";
 
 const Router = () => {
