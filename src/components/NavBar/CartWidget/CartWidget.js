@@ -12,8 +12,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 
 const CartWidget = () => {
-  const { cartQuantity } = useContext(CartContext);
-  // const cartQuantity2 = 2;
+  const { cartQuantity } = useContext(CartContext);   // Utilizo el CartContext para ver la cantidad de unidades que contiene el carrito
 
   return (
     <Link className="cart-div" to="/cart">

@@ -16,6 +16,7 @@ const ItemDetailContainer = () => {
 
   const [itemDetail, setItemDetail] = useState({});
 
+  // Efecto para verificar el item en base de datos y obtener sus atributos
   useEffect(() => {
     const dataBase = getFirestore();
 

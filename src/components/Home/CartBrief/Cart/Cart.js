@@ -18,13 +18,13 @@ const Cart = () => {
             <h2>Carrito de compras</h2>
             <ul>
             {cart.length > 0 ? 
-                cart.map((itemElement) => (
+                cart.map((itemElement) => (             // Mapeo cart y genero listado de articulos para el resumen del carro
                         <li key={itemElement.id}>
                             Articulo: {itemElement.name} - Precio: {itemElement.price} USD - Cantidad: {itemElement.quantity} unidades
                         </li>
                     )
                 )
-            :
+            :                                           // Si el carro esta vacio aviso al cliente
                 <p> Su carrito se encuentra vacio. Busque articulos en nuestra tienda y agreguelos al mismo. </p> 
             }
             </ul>

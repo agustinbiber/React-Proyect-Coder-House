@@ -1,3 +1,8 @@
+/*
+  Componente Router
+    Maneja las rutas url para navegar por el sitio mediante React Router Dom
+*/
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Error404 from "../../components/Home/Error404";

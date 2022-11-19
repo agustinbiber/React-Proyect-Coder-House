@@ -28,10 +28,17 @@ export default function CartBrief() {
   const [costumerPhone, setCostumerPhone] = useState("");
   const [costumerEmail, setCostumerEmail] = useState("");
 
+  // Solo permite ingresar numero en el input de telefono del cliente
   const handlePhoneInput = (event) => {
     /[0-9]$/.test(event.target.value) && setCostumerPhone(event.target.value);
   };
 
+  const eraseCart = () => {
+    clearCart();
+    toast("Usted vacio su carrito con exito.");
+  }
+
+  // Funcion para guardar en la data base la orden de compra y actulizar el stock restante de los articulos comprados
   const sendOrder = () => {
     const orderToSend = {
       name: costumerName,
@@ -41,10 +48,12 @@ export default function CartBrief() {
       total: 0,
     };
 
+    // Verificacion de datos del form - Basica pero se puede complejizar
     if (costumerName !== "" && costumerPhone !== "" && costumerEmail !== "") {
       const dataBase = getFirestore();
       const ordersCollection = collection(dataBase, "OrdersCollection");
 
+      // Reviso cada elemento de carro, verifico existencia y actulizo orden de compra y stock
       cart.forEach((cartElement) => {
         const itemRef = doc(dataBase, "ItemList", cartElement.id);
         getDoc(itemRef).then((snapshot) => {
@@ -54,8 +63,8 @@ export default function CartBrief() {
               orderToSend.total + cartElement.price * cartElement.quantity;
             if (itemFromDataBase.stock >= cartElement.quantity) {
               const newStock = itemFromDataBase.stock - cartElement.quantity;
-              updateDoc(itemRef, { stock: newStock });
-              addDoc(ordersCollection, orderToSend);
+              updateDoc(itemRef, { stock: newStock });      // Actualizo stock
+              addDoc(ordersCollection, orderToSend);        // Envio orden de compra a data base
             }
           }
         });
@@ -73,7 +82,6 @@ export default function CartBrief() {
       // Limpio el Cart
       clearCart();
 
-      //Vuelo a home
     } else {
       toast(
         "Datos incorrectos, por favor revise el formulario y vuelva a intentarlo"
@@ -133,7 +141,7 @@ export default function CartBrief() {
                 <button
                   className="cart-brief-button1"
                   tyoe="button"
-                  onClick={clearCart}
+                  onClick={eraseCart}
                 >
                   Vaciar carrito
                 </button>

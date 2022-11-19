@@ -21,16 +21,17 @@ export default function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
 
+  // Funcion para revisar si esta en cart y devuelve id
   const getFromCart = (id) => {
-    // Revisa si esta en cart y devuelve booleano
     return cart.find((order) => order.id === id);
   };
-
+  
+  // Funcion que verifica si un articulo ya se encuentra en el carro y devuelve booleano, revisa si es undef
   const isInCart = (id) => {
-    // Retorna booleano si esta en cart, revisa si es undef previamente
     return id !== undefined ? getFromCart(id) : undefined;
   };
 
+  // Funcion para agregar un objecto con la informacion del articulo al carro
   const addToCart = (obj) => {
     if (isInCart(obj && obj.id)) {
       toast("Elemento ya se encuentra en el carro, busque otros articulos");
@@ -38,17 +39,17 @@ export default function CartProvider({ children }) {
     }
     const updatedCart = cart;
     updatedCart.push(obj);
-    setCart(updatedCart); // Escribo variable del useState
-    const newCartQuantity = updatedCart.length;
-    setCartQuantity(newCartQuantity);
-    toast("El articulo se agrego con exito al carrito !!");
+    setCart(updatedCart);                         // Escribo variable del useState
+    const newCartQuantity = updatedCart.length;   // Actualizo cantidad de items distintos que contiene el carro
+    setCartQuantity(newCartQuantity);             // Guardo en el useState
+    toast("El articulo se agrego con exito al carrito !!");     // Notificacion
     return;
   };
 
+  // Funcion para vaciar el carro
   const clearCart = () => {
     setCart([]);
     setCartQuantity(0);
-    toast("Usted vacio su carrito con exito.");
   };
 
   return (

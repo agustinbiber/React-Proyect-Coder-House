@@ -16,14 +16,17 @@ function ItemCount(item) {
   const [contador, setContador] = useState(0);
   const { addToCart } = useContext(CartContext);
 
+  // Funcion que maneja la resta de unidades indicadas por el cliente en contador
   const handleRest = () => {
     setContador(contador - 1);
   };
 
+  // Funcion que maneja la suma de unidades indicadas por el cliente en contador
   const handleSum = () => {
     setContador(contador + 1);
   };
 
+  // Funcion que genera el objeto para agregar al carro, llamando a la funcion addToCart del CartContext
   const addItemToCart = () => {
     const itemToAdd = {
       id: item.id,
@@ -31,9 +34,9 @@ function ItemCount(item) {
       price: item.price,
       quantity: contador,
     };
-    // addToCart({name: "hola", id: 1222, price: 20}); FUNCIONA
+
     addToCart(itemToAdd);
-    setContador(0);
+    setContador(0);   // Reseteo del contador tras guardar en el carrito
   };
 
   return (
