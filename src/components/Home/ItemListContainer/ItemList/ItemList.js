@@ -8,38 +8,6 @@ import { getFirestore, getDocs, collection } from  "firebase/firestore";
 const ItemList = (props) => {
   const [items, setItems] = useState([]);
 
-  /*
-  const getItems = () => {
-    setTimeout(() => {
-      const itemsObject = itemsApi;
-      setItems(itemsObject);
-    }, 2000);
-  };
-  */
-  /*
-  const getItems = () => {
-    const dataBase = getFirestore();
-
-    const itemCollectionRef = collection(dataBase, "itemList");
-
-    getDocs(itemCollectionRef).then(
-      (snapshot) => {
-        snapshot.docs.map(
-          (doc) => {
-              const itemsObject = doc.data;
-              console.log(itemsObject);
-              setItems(itemsObject);
-          }
-        )
-      }
-    )
-  }
-
-  useEffect(() => {
-    getItems();
-  }, []);
-  */
-
   useEffect(() => {
     
     const itemsArray = [];
@@ -67,7 +35,8 @@ const ItemList = (props) => {
     <div className="item-list">
       {props.category ? items
       .filter( item => item.category === props.category).map((element, i) => (
-        <Item key={element.id}
+        <Item 
+          key={element.id}
           id={element.id}
           name={element.name}
           // model={element.model}
@@ -79,6 +48,7 @@ const ItemList = (props) => {
     items
     .map((element) => (
       <Item
+      key={element.id}
         id={element.id}
         name={element.name}
         // model={element.model}

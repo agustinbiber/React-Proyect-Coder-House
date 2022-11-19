@@ -5,37 +5,10 @@ import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { doc, getDoc, getFirestore, } from "firebase/firestore";
 
-//import { getItemById } from "../../APIrest/itemsApi";
-//import { useEffect, useState } from "react";
-
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
-//  const [item, setItem] = useState({});
-//  const itemSelected = itemsApi.filter(item => item.id === itemId);
-
-//  useEffect( () => {
-//    setItem(getItemById(itemId))
-//  }, []);
 
   const [itemDetail, setItemDetail ] = useState({});
-/*
-  useEffect(() => {
-    const dataBase = getFirestore();
-
-    const id = parseInt(itemId);
-    const reference = query(collection(dataBase, "ItemList"), where("id", "==", id) );
-
-    getDocs(reference).then(
-      (snpashot) => {
-        snpashot.docs.map((doc) => {
-            setItemDetail(doc.data());
-            return null;  // Para evitar error en consola
-          }
-        )
-      }
-    )
-  }, []);
-  */
 
   useEffect(() => {
 
@@ -50,8 +23,8 @@ const ItemDetailContainer = () => {
         setItemDetail(detail);
       }
     });
-  }, []);
-  
+  }, [itemId]);
+
   return (
     <div>
       <NavBar />

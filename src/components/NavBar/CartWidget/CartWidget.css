@@ -1,7 +1,21 @@
 .cart-div {
     height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 img {
     height: 100%;
+}
+
+.cart-indicator {
+    margin-left: 2em;
+    color: rgb(241,196,15);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
 }
