@@ -15,11 +15,13 @@ export const CartContext = createContext({
   isInCart: () => {},
   clearCart: () => {},
   cartQuantity: 0,
+  cartTotal: 0
 });
 
 export default function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [cartTotal, setCartTotal ] = useState(0);
 
   // Funcion para revisar si esta en cart y devuelve id
   const getFromCart = (id) => {
@@ -43,18 +45,23 @@ export default function CartProvider({ children }) {
     const newCartQuantity = updatedCart.length;   // Actualizo cantidad de items distintos que contiene el carro
     setCartQuantity(newCartQuantity);             // Guardo en el useState
     toast("El articulo se agrego con exito al carrito !!");     // Notificacion
+    const newCartTotal = cartTotal + obj.price*obj.quantity;
+    setCartTotal(newCartTotal);
     return;
   };
+
+  
 
   // Funcion para vaciar el carro
   const clearCart = () => {
     setCart([]);
     setCartQuantity(0);
+    setCartTotal(0);
   };
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, isInCart, clearCart, cartQuantity }}
+      value={{ cart, addToCart, isInCart, clearCart, cartQuantity, cartTotal }}
     >
       {children}
       <Toaster />
